@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 32.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpenFileDialog" type="FileDialog" parent="."]
+margin_left = 156.0
+margin_top = 70.0
+margin_right = 829.0
+margin_bottom = 535.0
+window_title = "Open File"
+mode = 0
+access = 2
+current_dir = "/Users/User/Documents/text_editor"
+current_path = "/Users/User/Documents/text_editor/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveFileDialog" type="FileDialog" parent="."]
+margin_left = 156.0
+margin_top = 70.0
+margin_right = 829.0
+margin_bottom = 535.0
+window_title = "Save File"
+access = 2
+current_dir = "/Users/User/Documents/text_editor"
+current_path = "/Users/User/Documents/text_editor/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButtonFile" type="MenuButton" parent="."]
+margin_left = 11.7027
+margin_top = 4.0
+margin_right = 110.703
+margin_bottom = 29.0
+text = "File"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButtonHelp" type="MenuButton" parent="."]
+margin_left = 120.827
+margin_top = 5.05946
+margin_right = 219.827
+margin_bottom = 30.0595
+text = "Help"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AboutDialog" type="WindowDialog" parent="."]
+margin_left = 295.962
+margin_top = 200.389
+margin_right = 678.962
+margin_bottom = 326.389
+window_title = "About"
+
+[node name="Label" type="Label" parent="AboutDialog"]
+margin_left = 5.29742
+margin_top = 21.1892
+margin_right = 384.297
+margin_bottom = 123.189
+text = "Welcome to the demo version of our text editor."
+[connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
+[connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
